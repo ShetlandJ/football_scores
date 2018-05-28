@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import TeamSelector from './components/TeamSelector'
 
-class App extends Component {
+class TeamSelector extends Component {
   state = {
     response: ''
   };
@@ -16,16 +15,16 @@ class App extends Component {
 
     if (response.status !== 200) throw Error(body.message);
     this.setState({ response: body })
+    // return body;
   };
 
   render() {
     return (
       <div className="App">
-        <TeamSelector />
-        <p>{this.state.response.fixture_date}</p>
+        <button>Heck</button>
       </div>
     );
   }
 }
 
-export default App;
+export default TeamSelector;

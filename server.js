@@ -10,7 +10,6 @@ app.get('/api/hello', (req, res) => {
 app.get('/api', async function(req, res) {
 
   var info = await sql.getFirstFixture()
-  // console.log(info);
   res.json(info)
 
 });
