@@ -6,7 +6,8 @@ class TeamSelector extends Component {
   };
 
   componentDidMount() {
-    this.callApi()
+    var response = this.callApi()
+    this.setState({ response: response })
   }
 
   callApi = async () => {
@@ -14,8 +15,8 @@ class TeamSelector extends Component {
     const body = await response.json();
 
     if (response.status !== 200) throw Error(body.message);
-    this.setState({ response: body })
-    // return body;
+    return body
+    // this.setState({ response: body })
   };
 
   render() {

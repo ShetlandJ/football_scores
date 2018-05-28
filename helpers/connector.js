@@ -1,10 +1,13 @@
 const mysql = require('mysql');
 const { Client } = require('pg')
-
 const connectionString = 'postgresql://localhost:5432/football_scores'
 
-const client = new Client({
-  connectionString: connectionString,
-})
+export function openConnection() {
 
-module.exports
+  const client = new Client({
+    connectionString: connectionString,
+  })
+
+  return client
+
+}
